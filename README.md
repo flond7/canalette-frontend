@@ -31,7 +31,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 git init
 git add README.md
 git config --global http.proxy http[s]://username:password@proxyipaddress:portnumber
-git config --global user.name mail@gmail.com
+git config --global user.name "NICK"
+git config --global user.mail mail@gmail.com
 git config --global user.password *********
 git commit -m "first commit"
 git branch -M main
