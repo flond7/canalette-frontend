@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 /* COMPONENTS */
 import { DbRowComponent } from './components/db-row/db-row.component';
@@ -15,7 +15,6 @@ import { TestViewComponent } from './views/test-view/test-view.component';
 @NgModule({
   declarations: [
     AppComponent,
-    
     TestViewComponent,
     HomeComponent,
     
@@ -24,6 +23,7 @@ import { TestViewComponent } from './views/test-view/test-view.component';
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule
   ],
   providers: [],
