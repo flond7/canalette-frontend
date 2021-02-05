@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+/* FA ICONS */
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-test-view',
@@ -11,5 +13,8 @@ export class TestViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  /* FA ICONS */
+  faCoffee = faCoffee;
 
 }
