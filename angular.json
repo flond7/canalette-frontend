@@ -32,10 +32,11 @@
             ],
             "styles": [
               "src/styles.sass",
-              "src/styles/_variables.sass"
+              "src/styles/_variables.sass",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "stylePreprocessorOptions": {
