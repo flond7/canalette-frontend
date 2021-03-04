@@ -31,9 +31,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "src/styles/_variables.sass"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
+          },
+          "stylePreprocessorOptions": {
+            "includePaths": [
+              "src/app/constants/"
+            ]
           },
           "configurations": {
             "production": {
