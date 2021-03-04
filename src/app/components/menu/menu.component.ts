@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  public buttonArray = [
+    {"text": "TEST", "link": "link"},
+    {"text": "TEST 2", "link": "link"},
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
