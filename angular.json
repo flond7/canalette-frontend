@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "starter": {
+    "canalette-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/starter",
+            "outputPath": "dist/canalette-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "starter:build"
+            "browserTarget": "canalette-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "starter:build:production"
+              "browserTarget": "canalette-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "starter:build"
+            "browserTarget": "canalette-frontend:build"
           }
         },
         "test": {
@@ -124,16 +124,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "starter:serve"
+            "devServerTarget": "canalette-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "starter:serve:production"
+              "devServerTarget": "canalette-frontend:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "starter"
+  "defaultProject": "canalette-frontend"
 }

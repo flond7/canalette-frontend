@@ -8,7 +8,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'starter';
+  title = 'canalette-frontend';
   
   faCoffee = faCoffee;
 }

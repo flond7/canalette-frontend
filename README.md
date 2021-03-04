@@ -1,4 +1,4 @@
-# Starter
+# canalette-frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-##GITHUB
+## GITHUB
 git init 
 git add README.md 
 git config --global http.proxy http[s]://username:password@proxyipaddress:portnumber 
@@ -45,5 +45,6 @@ git branch -mv origin master (change name from origin to master)
 git remote -v (check origin)
 git remote set-url origin https://github.com/USERNAME/REPOSITORY.git (change repository)
 
-##ANGULAR COMMANDS
+## ANGULAR COMMANDS
 ng g component components/component-name (component-name format to keep order)
+
