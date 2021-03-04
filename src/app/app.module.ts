@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 /* COMPONENTS */
 import { DbRowComponent } from './components/db-row/db-row.component';
 import { TestComponentComponent } from './components/test-component/test-component.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 /* VIEWS */
 import { HomeComponent } from './views/home/home.component';
@@ -19,7 +20,8 @@ import { TestViewComponent } from './views/test-view/test-view.component';
     HomeComponent,
     
     DbRowComponent,
-    TestComponentComponent
+    TestComponentComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
