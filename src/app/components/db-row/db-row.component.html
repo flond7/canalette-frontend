@@ -1,1 +1,25 @@
-<p>db-row works!</p>
+<div class="row border-bottom py-2">
+
+  <div class="col-8 d-flex flex-row align-items-center">
+    <div *ngIf="listOfColumns.first_name" class="col-4">{{data.first_name}} {{data.last_name}}</div>
+    <div *ngIf="listOfColumns.year" class=" col-4">{{data.year_id}}</div>
+    <div *ngIf="listOfColumns.drain" class=" col-4">Canaletta</div>
+  </div>
+
+  <div class="col-1 d-flex justify-content-around align-items-center">
+    <button *ngIf="listOfColumns.paid && data.paid === true" class="btn text-success" (click)="data.paid = !data.paid"><fa-icon [icon]="faCheck"></fa-icon></button>
+    <button *ngIf="listOfColumns.paid && data.paid === false" class="btn text-danger" (click)="data.paid = !data.paid"><fa-icon [icon]="faTimes"></fa-icon></button>
+  </div>
+
+  <div class="col-1 d-flex justify-content-around align-items-center" *ngIf="listOfColumns.amount">{{data.amount | currency:'EUR'}}</div>
+
+  <div class="col-2 d-flex justify-content-around align-items-center">
+    <button class="btn">
+      <fa-icon [icon]="faEdit"></fa-icon>
+    </button>
+    <button class="btn">
+      <fa-icon [icon]="faTrashAlt"></fa-icon>
+    </button>
+  </div>
+
+</div>

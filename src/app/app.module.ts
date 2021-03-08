@@ -8,20 +8,28 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DbRowComponent } from './components/db-row/db-row.component';
 import { TestComponentComponent } from './components/test-component/test-component.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ListComponent } from './components/list/list.component';
 
 /* VIEWS */
 import { HomeComponent } from './views/home/home.component';
 import { TestViewComponent } from './views/test-view/test-view.component';
+import { ListDrainComponent } from './views/list-drain/list-drain.component';
+import { ListUsersComponent } from './views/list-users/list-users.component';
+import { ListYearsComponent } from './views/list-years/list-years.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestViewComponent,
     HomeComponent,
+    ListDrainComponent,
+    ListUsersComponent,
+    ListYearsComponent,
     
     DbRowComponent,
     TestComponentComponent,
-    MenuComponent
+    MenuComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
