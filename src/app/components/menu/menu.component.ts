@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/* FA ICONS */
+import { faPlus, faTimes, faCheck, faMoneyBillAlt } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  faPlus = faPlus;
+  
   public buttonArray = [
-    {"text": "TEST", "link": "link"},
-    {"text": "TEST 2", "link": "link"},
+    {"text": "Inserisci", "link": "link"},
+    {"text": "Visualizza", "link": "link"},
+    {"text": "Scarica", "link": "link"},
   ]
 
   constructor() { }
