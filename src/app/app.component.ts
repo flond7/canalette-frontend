@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-/* FA ICONS */
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +8,4 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'canalette-frontend';
   
-  faCoffee = faCoffee;
 }
