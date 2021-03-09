@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 /* FA ICONS */
-import { faEdit, faTimes, faCheck, faMoneyBillAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faTimes, faMoneyBillAlt, faCheck, faThumbsUp, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-db-row',
@@ -11,21 +12,30 @@ import { faEdit, faTimes, faCheck, faMoneyBillAlt, faTrashAlt } from '@fortaweso
 export class DbRowComponent implements OnInit {
 
   /* FA ICONS */
-  faEdit = faEdit;
+  faPencilAlt = faPencilAlt;
   faTimes = faTimes;
-  faCheck = faCheck;
   faMoneyBillAlt = faMoneyBillAlt;
+  faCheck = faCheck;
+  faThumbsUp = faThumbsUp;
   faTrashAlt = faTrashAlt;
 
-  //@Input() data={"first_name":"","last_name":"","year_id":0,"paid": false};
+  @Input() data: any;
+  @Input() listOfColumns: any;
 
-  @Input() data:any;
-  @Input() listOfColumns:any;
-
+  unclickable = true;
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.listOfColumns)
+  ngOnInit(): void { }
+
+  paidChange(row: any) {
+    if (row.paid === false) {
+      //visualize input and make available DONE button
+      this.unclickable = false;
+      //emit a value that tells the list something is changed so it can visualize a warning
+
+      // change the paid value
+      row.paid = !row.paid
+    }
   }
 
 }
