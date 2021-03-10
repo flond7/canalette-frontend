@@ -22,6 +22,7 @@ import { TestViewComponent } from './views/test-view/test-view.component';
 import { ListDrainComponent } from './views/list-drain/list-drain.component';
 import { ListUsersComponent } from './views/list-users/list-users.component';
 import { ListYearsComponent } from './views/list-years/list-years.component';
+import { EditComponent } from './views/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ListYearsComponent } from './views/list-years/list-years.component';
     DbRowComponent,
     TestComponentComponent,
     MenuComponent,
-    ListComponent
+    ListComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
