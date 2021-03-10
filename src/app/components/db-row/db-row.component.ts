@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 /* FA ICONS */
@@ -22,6 +22,8 @@ export class DbRowComponent implements OnInit {
   @Input() data: any;
   @Input() listOfColumns: any;
 
+  @Output() rowChanged = new EventEmitter<boolean>();
+
   unclickable = true;
   constructor() { }
 
@@ -32,7 +34,7 @@ export class DbRowComponent implements OnInit {
       //visualize input and make available DONE button
       this.unclickable = false;
       //emit a value that tells the list something is changed so it can visualize a warning
-
+      this.rowChanged.emit(true);
       // change the paid value
       row.paid = !row.paid
     }

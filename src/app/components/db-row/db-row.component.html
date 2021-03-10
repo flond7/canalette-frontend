@@ -3,18 +3,18 @@
   <div *ngIf="listOfColumns.first_name" class="col-3">{{data.first_name}} {{data.last_name}}</div>
   <div *ngIf="listOfColumns.drain" class="col-2">{{data.drain_id}}drain</div>
   <div *ngIf="listOfColumns.paid" class="col-1">
-    <button *ngIf="listOfColumns.paid && data.paid === true" class="btn text-success no-hover" (click)="paidChange(data)"><fa-icon [icon]="faMoneyBillAlt"></fa-icon></button>
-    <button *ngIf="listOfColumns.paid && data.paid === false" class="btn text-danger no-hover" (click)="paidChange(data)"><fa-icon [icon]="faTimes"></fa-icon></button>
+    <button *ngIf="listOfColumns.paid && data.paid === true" class="btn no-hover btn-transparent" (click)="paidChange(data)"><fa-icon [icon]="faMoneyBillAlt"></fa-icon></button>
+    <button *ngIf="listOfColumns.paid && data.paid === false" class="btn no-hover btn-transparent" (click)="paidChange(data)"><fa-icon [icon]="faTimes"></fa-icon></button>
   </div>
-  <div *ngIf="listOfColumns.amount && unclickable === true" class="col-2">{{data.amount | currency:'EUR'}}</div>
+  <div *ngIf="listOfColumns.amount && unclickable === true" class="col-2">{{data.amount === 0 ? '--' : data.amount | currency:'EUR'}}</div>
   <div *ngIf="listOfColumns.amount && unclickable === false" class="col-2">
     <input [(ngModel)]="data.amount" type="text" class="form-control" />
   </div>
   <div class="col-2 d-flex flex-row">
-    <button class="btn mr-2"><fa-icon [icon]="faPencilAlt"></fa-icon></button>
-    <button class="btn"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+    <button class="btn btn-secondary mr-3"><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+    <button class="btn btn-secondary"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
   </div>
   <div class="col-1 d-flex flex-row">
-    <button *ngIf="unclickable === false" (click)="unclickable = true" class="btn btn-success animate__animated animate__fadeIn animate__slow animate__bounceIn"><fa-icon [icon]="faCheck"></fa-icon></button>
+    <button *ngIf="unclickable === false" (click)="unclickable = true" class="btn btn-success animate__animated animate__fadeIn"><fa-icon [icon]="faCheck"></fa-icon></button>
   </div>
 </div>
