@@ -1,11 +1,3 @@
-/* COLORS */
-$dark: #11222b
-$light: #fff
-$primary: #fecf6c !important
-$secondary: #ff7761 !important
-$gray: #959595
-$warning: #f9a11b !important
-
 /*PALETTE*/
 $one: #FBFFB9 
 $two: #fdd692
@@ -21,12 +13,35 @@ $nine: #fecf6c
 $ten: #ff7761
 $eleven: #fdc23e
 $twelve: #f9a11b
+$thirteen: #11222b
+$fourteen: #959595
 
-/*OVER BASIC STYLE*/
+
+// redefine bootsrap colors
+$theme-colors: ("primary": #fecf6c,"secondary":$three,"danger": #ec7357,"warning":#ffdab5,"info":#8ce0ac,"dark": $thirteen,"light": #fff,"muted": #ccc)
+
+// Bootstrap and its default variables - LOAD AFTER THEME COLORO
+@import ~bootstrap/scss/bootstrap
+// Bootstrap and its default variables
+@import ~bootstrap/scss/bootstrap
+
+/* COLORS */
+$dark-l: lighten($dark, 5)
+$dark-d: darken($dark, 25)
+$secondary-d: darken($secondary, 5)
+$light: #fff
+$gray: #959595
+
+/* BOOTSTRAP STYLES CHANGED */
+.bg-dark
+  //background-color: $thirteen !important
 .bg-primary
-  background-color: $nine !important
+ // background-color: $nine !important
   color: $dark
-
+.btn-secondary
+  border: none
+  
+/* SIMIL BOOTSTRAP COLOR STYLES */
 .text-gray
   color: $gray
 .border-bottom-gray
