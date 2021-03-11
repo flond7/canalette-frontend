@@ -1,4 +1,17 @@
-<div>
-  <div *ngFor="let button of buttonArray" 
-        class="d-flex text-light justify-content-center align-items-center btn border-bottom"> {{button.text}} </div>
+<div class="d-flex flex-column align-content-center h-100">
+  <!-- <button *ngFor="let button of buttonArray" 
+        class="d-flex text-light justify-content-center align-items-center btn border-bottom">
+        <fa-icon [icon]='string(button.icon)'></fa-icon> {{button.text}} </button> -->
+  <button class="d-flex text-light align-items-center btn border-bottom w-100">
+    <fa-icon [icon]='faPlus' class="mr-3"></fa-icon> Aggiungi
+  </button>
+  <button class="d-flex text-light align-items-center btn border-bottom w-100">
+    <fa-icon [icon]='faWater' class="mr-3"></fa-icon> Storico per canaletta
+  </button>
+  <button class="d-flex text-light align-items-center btn border-bottom w-100">
+    <fa-icon [icon]='faUser' class="mr-3"></fa-icon> Storico per utente
+  </button>
+  <button class="d-flex text-light align-items-center btn w-100">
+    <fa-icon [icon]='faCalendar' class="mr-3"></fa-icon> Storico per anno
+  </button>
 </div>
