@@ -23,6 +23,7 @@ import { ListDrainComponent } from './views/list-drain/list-drain.component';
 import { ListUsersComponent } from './views/list-users/list-users.component';
 import { ListYearsComponent } from './views/list-years/list-years.component';
 import { EditComponent } from './views/edit/edit.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditComponent } from './views/edit/edit.component';
     TestComponentComponent,
     MenuComponent,
     ListComponent,
-    EditComponent
+    EditComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,30 @@
-
 @import ./styles/_variables
 @import ~bootstrap/dist/css/bootstrap.css
+@import ~animate.css/animate.min
 
 body, html
     background-color: $dark !important
     color: #fff !important
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
 .container
-    margin-top: 5em
+    height: 90vh
 .rounded-circle
     width: 3em
     height: 3em
-button
-    width: 3em
-    height: 3em
-    color: $light !important
-    &:hover
-        background-color: $secondary
-        color: $secondary !important
 .no-hover:hover
     background-color: $dark !important
+.searchstring
+    width: 15vw
+    border-radius: 5px
+    border-top-right-radius: 0 !important
+    border-bottom-right-radius: 0 !important
+    background-color: $dark-l
+    border: none
+    color: $gray
+.button-input
+    border-radius: 5px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0 
