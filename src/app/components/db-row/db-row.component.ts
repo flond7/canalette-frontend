@@ -27,7 +27,7 @@ export class DbRowComponent implements OnInit {
   unclickable = true;
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {console.log(this.data) }
 
   paidChange(row: any) {
     if (row.paid === false) {

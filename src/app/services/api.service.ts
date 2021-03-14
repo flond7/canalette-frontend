@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 
-const baseURL = '172.20.34.75/canalette-backend';
+const baseURL = 'http://172.20.34.75/canalette-backend';
 
 @Injectable({  providedIn: 'root'})
 
 export class ApiService {
   constructor(private httpClient: HttpClient) { }
-
+  
   /* getOptions() {
     let headers = new HttpHeaders;
     if (this.auth.jwtoken) {
@@ -18,15 +18,27 @@ export class ApiService {
   }
  */
 
+  /* SEARCHBAR */
+  // category must be 
+  searchInCategory(element: any, category: any) {
+    //search in users where cf === el
+    return {"element": element, "category": category}
+  }
+
   /* USER */
   userReadAll(): Observable<any> {
-    return this.httpClient.get(baseURL+"/users/");
+    return this.httpClient.get(baseURL+"/user/");
   }
 
-  /* userRead(id): Observable<any> {
-    return this.httpClient.get(`${baseURL}+"/users/view/"${id}`);
-  }
+  /* findSingleUser(cf:any): Observable<any> {
+    return this.httpClient.get(`${baseURL}/users/view/${cf}`);
+  } */
 
+
+  findSingleUser(cf:any) {
+    return this.httpClient.get(`${baseURL}/user/view/${cf}`)
+  }
+/*
   create(data): Observable<any> {
     return this.httpClient.post(baseURL, data);
   }
@@ -46,4 +58,15 @@ export class ApiService {
   searchByName(name): Observable<any> {
     return this.httpClient.get(`${baseURL}?name=${name}`);
   } */
+
+
+  /* DRAIN */
+  findSingleDrain(num:any) {
+    return this.httpClient.get(`${baseURL}/drain/joined/${num}`);
+  }  // find all records of specific drain. search by drain number, not ID
+
+  /* YEAR */
+  findSingleYear(cf:any): Observable<any> {
+    return this.httpClient.get(`${baseURL}/year/view/${cf}`);
+  }
 }

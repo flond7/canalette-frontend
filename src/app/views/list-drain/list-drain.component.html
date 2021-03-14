@@ -6,14 +6,20 @@
     </div>
 
     <div class="col-9">
-      <!-- TITLE -->
-      <div class="row mb-4">
-        <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary mr-3"><fa-icon [icon]="faWater"></fa-icon></div>
-        <h1 class="">Canalette</h1>
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="row">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary mr-3"><fa-icon [icon]="faWater"></fa-icon></div>
+          <h1 class="">Canalette</h1>
+        </div>
+        <div class="">
+          <app-searchbar [category]="'drainChannel'" (searchList)="searchListResult($event)"></app-searchbar>
+        </div>
       </div>
+
       <!-- LIST -->
-      <app-list [listOfColumns]="listOfColumns"></app-list>
+      <app-list [listOfColumns]="listOfColumns" [data]="dataResult"></app-list>
     </div>
-    
+
   </div>
 </div>

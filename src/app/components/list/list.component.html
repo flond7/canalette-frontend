@@ -1,6 +1,7 @@
 <div class="">
+
   <!-- headers -->
-  <div class="row align-items-center justify-content-start border-bottom-gray text-gray font-weight-bold pb-2">
+  <div class="row align-items-center justify-content-start border-bottom-gray text-primary font-weight-bold pb-2">
     <div *ngIf="listOfColumns.year" class="col-1">Anno</div>
     <div *ngIf="listOfColumns.first_name" class="col-3">Nome e Cognome</div>
     <div *ngIf="listOfColumns.drain" class="col-2">Canaletta</div>
@@ -10,19 +11,21 @@
     <div *ngIf="listOfColumns.amount" class="col-1"></div>
   </div>
 
-  <!-- rows -->
-  <app-db-row *ngFor="let row of filteredData" [data]=row [listOfColumns]=listOfColumns (rowChanged)="rowChanged($event)"></app-db-row>
 
-  <!-- TOTALS -->
-  <div class="row align-items-center justify-content-end pt-4">
-    <div class="col-2 d-flex justify-content-end">Assegnate:<span class="text-primary font-bold"> {{this.filteredData.length}}</span></div>
-    <div class="col-2 d-flex justify-content-end">Pagate: {{this.paidDrains}}</div>
-    <div class="col-3 d-flex justify-content-end">Ancora da pagare: {{this.filteredData.length - this.paidDrains}}</div>
+  <div *ngIf="data !== undefined">
+    <!-- rows -->
+    <app-db-row *ngFor="let row of data" [data]=row [listOfColumns]=listOfColumns (rowChanged)="rowChanged($event)"></app-db-row>
+    <!-- totals -->
+    <div class="row align-items-center justify-content-end pt-4">
+      <div class="col-2 d-flex justify-content-end">Assegnate:<span class="text-primary font-bold ml-2"> {{this.data.length}}</span></div>
+      <div class="col-2 d-flex justify-content-end">Pagate: {{this.paidDrains}}</div>
+      <div class="col-3 d-flex justify-content-end">Ancora da pagare: {{this.data.length - this.paidDrains}}</div>
+    </div>
   </div>
 
   <div class="row align-items-center justify-content-end pt-4">
     <div class="col-10">
-      <!-- WARNING -->
+      <!-- warning -->
       <div *ngIf="showAlert === true" class="alert alert-danger m-0"><fa-icon [icon]="faExclamationTriangle" class="mr-3"></fa-icon>Alcuni valori sono stati modificati, ricordati di salvare</div> 
    </div>
    <div class="col-2">

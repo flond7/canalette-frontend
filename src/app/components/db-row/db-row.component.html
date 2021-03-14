@@ -1,17 +1,17 @@
-<div class="row border-bottom py-2 align-items-center justify-content-start">
-  <div *ngIf="listOfColumns.year" class="col-1">{{data.year_id}}</div>
+<div class="row border-bottom-gray py-2 align-items-center justify-content-start">
+  <div *ngIf="listOfColumns.year" class="col-1">{{data.id_year}}</div>
   <div *ngIf="listOfColumns.first_name" class="col-3">{{data.first_name}} {{data.last_name}}</div>
-  <div *ngIf="listOfColumns.drain" class="col-2">{{data.drain_id}}drain</div>
+  <div *ngIf="listOfColumns.drain" class="col-2">{{data.num}}</div>
   <div *ngIf="listOfColumns.paid" class="col-1">
-    <button *ngIf="listOfColumns.paid && data.paid === true" class="btn no-hover btn-transparent" (click)="paidChange(data)"><fa-icon [icon]="faMoneyBillAlt"></fa-icon></button>
-    <button *ngIf="listOfColumns.paid && data.paid === false" class="btn no-hover btn-transparent" (click)="paidChange(data)"><fa-icon [icon]="faTimes"></fa-icon></button>
+    <button *ngIf="data.paid === '1'" class="btn no-hover btn-transparent" (click)="paidChange(data)"><fa-icon [icon]="faMoneyBillAlt"></fa-icon></button>
+    <button *ngIf="data.paid === '0'" class="btn no-hover btn-transparent" (click)="paidChange(data)"><fa-icon [icon]="faTimes"></fa-icon></button>
   </div>
   <div *ngIf="listOfColumns.amount && unclickable === true" class="col-2">{{data.amount === 0 ? '--' : data.amount | currency:'EUR'}}</div>
   <div *ngIf="listOfColumns.amount && unclickable === false" class="col-2">
     <input [(ngModel)]="data.amount" type="text" class="form-control" />
   </div>
   <div class="col-2 d-flex flex-row">
-    <button class="btn btn-secondary mr-3"><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+    <button class="btn btn-secondary mr-3" [routerLink]=""><fa-icon [icon]="faPencilAlt"></fa-icon></button>
     <button class="btn btn-secondary"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
   </div>
   <div class="col-1 d-flex flex-row">

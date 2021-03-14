@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 /* FA ICONS */
-import { faWater } from '@fortawesome/free-solid-svg-icons';
+import { faWater, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-drain',
@@ -12,6 +12,7 @@ import { faWater } from '@fortawesome/free-solid-svg-icons';
 export class ListDrainComponent implements OnInit {
 
   faWater = faWater;
+  dataResult: any;
 
   listOfColumns = {
     "first_name": true,
@@ -24,15 +25,10 @@ export class ListDrainComponent implements OnInit {
 
   constructor(public api: ApiService) { }
 
-  ngOnInit(): void {
-    console.log("list view");
-    console.log(this.listOfColumns);
-    //this.getElements();
+  ngOnInit(): void {}
+
+  searchListResult(e:any) {
+    this.dataResult = e;
   }
-  /* getElements() {
-    this.api.userReadAll().subscribe(response => {
-      console.log(response)
-    })
-  } */
 
 }
