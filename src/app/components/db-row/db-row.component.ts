@@ -30,13 +30,14 @@ export class DbRowComponent implements OnInit {
   ngOnInit(): void {console.log(this.data) }
 
   paidChange(row: any) {
-    if (row.paid === false) {
+    console.log(row);
+    if (row.paid === '0') {
       //visualize input and make available DONE button
       this.unclickable = false;
       //emit a value that tells the list something is changed so it can visualize a warning
       this.rowChanged.emit(true);
       // change the paid value
-      row.paid = !row.paid
+      row.paid = '1';
     }
   }
 
