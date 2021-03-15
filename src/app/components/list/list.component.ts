@@ -23,7 +23,7 @@ export class ListComponent implements OnChanges {
     //console.log(this.listOfColumns);
     console.log(this.data);
     if(this.data != undefined) {  //to avoid error when data is not loaded yet
-      this.paidDrains = this.data.filter((el:any) => { return el.paid === false }).length;
+      this.paidDrains = this.data.filter((el:any) => { return el.paid === '1' }).length;
     }
   }
 
