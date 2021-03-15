@@ -1,7 +1,7 @@
 <div class="">
 
   <!-- headers -->
-  <div class="row align-items-center justify-content-start border-bottom-gray text-primary font-weight-bold pb-2">
+  <div class="row align-items-center justify-content-start border-bottom-gray text-primary pb-2">
     <div *ngIf="listOfColumns.year" class="col-1">Anno</div>
     <div *ngIf="listOfColumns.first_name" class="col-3">Nome e Cognome</div>
     <div *ngIf="listOfColumns.drain" class="col-2">Canaletta</div>
@@ -17,9 +17,9 @@
     <app-db-row *ngFor="let row of data" [data]=row [listOfColumns]=listOfColumns (rowChanged)="rowChanged($event)"></app-db-row>
     <!-- totals -->
     <div class="row align-items-center justify-content-end pt-4">
-      <div class="col-2 d-flex justify-content-end">Assegnate:<span class="text-primary font-bold ml-2"> {{this.data.length}}</span></div>
-      <div class="col-2 d-flex justify-content-end">Pagate: {{this.paidDrains}}</div>
-      <div class="col-3 d-flex justify-content-end">Ancora da pagare: {{this.data.length - this.paidDrains}}</div>
+      <div class="col-2 d-flex justify-content-end">Assegnate:<span class="text-primary font-bold ml-2">{{this.data.length}}</span></div>
+      <div class="col-2 d-flex justify-content-end">Pagate:<span class="text-primary font-bold ml-2">{{this.paidDrains}}</span></div>
+      <div class="col-3 d-flex justify-content-end">Ancora da pagare:<span class="text-primary font-bold ml-2">{{this.data.length - this.paidDrains}}</span></div>
     </div>
   </div>
 
