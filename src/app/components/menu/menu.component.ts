@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 /* FA ICONS */
 import { faPlus, faWater, faCalendar, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -16,12 +17,12 @@ export class MenuComponent implements OnInit {
   faUser = faUser;
 
   
-  public buttonArray = [
-    {"text": "Inserisci", "link": "link", "icon": "faWater"},
-    {"text": "Storico per canaletta", "link": "link", "icon": "faWater"},
-    {"text": "Storico per anno", "link": "link", "icon": "faCalendar"},
-    {"text": "Storico utente", "link": "link", "icon": "faUser"},
-  ]
+  /* public buttonArray = [
+    {"text": "Inserisci", "link": "link", "icon": "'faWater'"},
+    {"text": "Storico per canaletta", "/link-drain": "link", "icon": "'faWater'"},
+    {"text": "Storico per anno", "link": "/link-year", "icon": "'faWater'"},
+    {"text": "Storico utente", "link": "/link-user", "icon": "'faWater'"},
+  ] */
 
   constructor() { }
 
