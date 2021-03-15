@@ -1,1 +1,25 @@
-<p>list-users works!</p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-3">
+      <app-menu></app-menu>
+    </div>
+
+    <div class="col-9">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="row">
+          <div class="d-flex align-items-center align-items-center justify-content-center rounded-circle bg-secondary mr-3"><fa-icon [icon]="faUser"></fa-icon></div>
+          <h1 class="">Utenti</h1>
+        </div>
+        <div class="">
+          <app-searchbar [category]="'user'" (searchList)="searchListResult($event)"></app-searchbar>
+        </div>
+      </div>
+
+      <!-- LIST -->
+      <app-list [listOfColumns]="listOfColumns" [data]="dataResult"></app-list>
+    </div>
+
+  </div>
+</div>
