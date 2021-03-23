@@ -35,14 +35,18 @@ export class ApiService {
   } */
 
 
-  findSingleUser(cf:any) {
+  /* findSingleUser(cf:any) {
     return this.httpClient.get(`${baseURL}/user/view/${cf}`)
-  }
-/*
-  create(data): Observable<any> {
-    return this.httpClient.post(baseURL, data);
+  } */
+  findSingleUser(cf:any) {
+    return this.httpClient.get(`${baseURL}/user/view`, cf)
   }
 
+  createUser(data:any): Observable<any> {
+    console.log(data);
+    return this.httpClient.post(`${baseURL}/user/create`, data);
+  }
+/*
   update(id, data): Observable<any> {
     return this.httpClient.put(`${baseURL}/${id}`, data);
   }
@@ -65,8 +69,18 @@ export class ApiService {
     return this.httpClient.get(`${baseURL}/drain/joined/${num}`);
   }  // find all records of specific drain. search by drain number, not ID
 
+  createDrain(data:any): Observable<any> {
+    console.log(data);
+    return this.httpClient.post(`${baseURL}/drain/create`, data);
+  }
+
   /* YEAR */
   findSingleYear(cf:any): Observable<any> {
     return this.httpClient.get(`${baseURL}/year/view/${cf}`);
+  }
+
+  createYear(data:any): Observable<any> {
+    console.log(data);
+    return this.httpClient.post(`${baseURL}/drain/create`, data);
   }
 }
