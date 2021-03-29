@@ -81,8 +81,9 @@ export class ApiService {
 
 
   /* YEAR */
-  findSingleYear(cf:any): Observable<any> {
-    return this.httpClient.get(`${baseURL}/year/view/${cf}`);
+  findSingleYear(year:any): Observable<any> {
+    return this.httpClient.get(`${baseURL}/tax/view/${year}`);
+
   }
 
   createYear(data:any): Observable<any> {

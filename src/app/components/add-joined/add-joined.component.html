@@ -2,20 +2,30 @@
   <div class="row">
     <div class="col-6">
       <label>CF utente</label>
-      <input [(ngModel)]="data.cf" name="" type="text" class="form-control" />
+      <input [(ngModel)]="cf" (focusout)="searchUser()" name="" type="text" class="form-control" />
     </div>
-    <div class="col-6 text-danger">
-      Le tariffe per quest'anno non sono ancora state definite. Inseriscile prima di prseguire
+    <div *ngIf="errorUser == true" class="col-6 text-danger d-flex align-items-end">
+      Quest'utente non si trova nel sistema.
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-6">
       <label>Num. canaletta</label>
-      <input [(ngModel)]="data.num" name="" type="text" class="form-control" />
+      <input [(ngModel)]="num" (focusout)="searchDrain()" name="" type="text" class="form-control" />
     </div>
-    <div class="col-6 text-danger">
+    <div *ngIf="errorDrain == true" class="col-6 text-danger d-flex align-items-end">
       Questa canaletta non è stata inserita nel sistema.
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-6">
+      <label>Anno</label>
+      <input [(ngModel)]="year" (focusout)="searchYear()" name="" type="text" class="form-control" />
+    </div>
+    <div *ngIf="errorYear == true" class="col-6 text-danger d-flex align-items-end">
+      Le tariffe per quest'anno non sono ancora state definite. Inseriscile prima di prseguire
     </div>
   </div>
 
