@@ -5,6 +5,7 @@ import { ListDrainComponent } from './views/list-drain/list-drain.component';
 import { ListUsersComponent } from './views/list-users/list-users.component';
 import { ListYearsComponent } from './views/list-years/list-years.component';
 import { AddComponent } from './views/add/add.component';
+import { AddJoinedComponent } from './views/add-joined/add-joined.component';
 import { TestViewComponent } from './views/test-view/test-view.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'list-user', component: ListUsersComponent },
   { path: 'list-year', component: ListYearsComponent },
   { path: 'add', component: AddComponent },
+  { path: 'add-joined', component: AddJoinedComponent },
   { path: 'test-view', component: TestViewComponent },
 ];
 

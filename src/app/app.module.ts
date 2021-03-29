@@ -27,6 +27,7 @@ import { EditComponent } from './views/edit/edit.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { AddComponent } from './views/add/add.component';
 import { WarningComponent } from './components/warning/warning.component';
+import { AddJoinedComponent } from './components/add-joined/add-joined.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { WarningComponent } from './components/warning/warning.component';
     EditComponent,
     SearchbarComponent,
     AddComponent,
-    WarningComponent
+    WarningComponent,
+    AddJoinedComponent
   ],
   imports: [
     BrowserModule,
