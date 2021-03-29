@@ -14,7 +14,7 @@
 
   <div *ngIf="data !== undefined">
     <!-- rows -->
-    <app-db-row *ngFor="let row of data" [data]=row [listOfColumns]=listOfColumns (rowChanged)="rowChanged($event)"></app-db-row>
+    <app-db-row *ngFor="let row of data" [data]=row [listOfColumns]=listOfColumns (rowChanged)="rowChanged($event)" (rowDeleted)="rowDeleted($event)"></app-db-row>
     <!-- totals -->
     <div class="row align-items-center justify-content-end pt-4">
       <div class="col-2 d-flex justify-content-end">Assegnate:<span class="text-primary font-bold ml-2">{{this.data.length}}</span></div>

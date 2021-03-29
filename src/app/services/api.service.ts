@@ -74,13 +74,29 @@ export class ApiService {
     return this.httpClient.post(`${baseURL}/drain/create`, data);
   }
 
+  deleteDrain(id:any): Observable<any> {
+    return this.httpClient.delete(`${baseURL}/drain/delete/${id}`);
+  }
+
+
+
   /* YEAR */
   findSingleYear(cf:any): Observable<any> {
     return this.httpClient.get(`${baseURL}/year/view/${cf}`);
   }
 
   createYear(data:any): Observable<any> {
-    console.log(data);
-    return this.httpClient.post(`${baseURL}/drain/create`, data);
+    //console.log(data);
+    return this.httpClient.post(`${baseURL}/tax/create`, data);
   }
+
+
+
+
+  /* DELETE ELEMENT AND JOINED TABLE */
+
+  deleteRelational(id:any): Observable<any> {
+    return this.httpClient.delete(`${baseURL}/relational/delete/${id}`);
+  }
+
 }

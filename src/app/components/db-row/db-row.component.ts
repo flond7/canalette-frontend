@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 
 /* FA ICONS */
@@ -23,9 +24,10 @@ export class DbRowComponent implements OnInit {
   @Input() listOfColumns: any;
 
   @Output() rowChanged = new EventEmitter<boolean>();
+  @Output() rowDeleted = new EventEmitter<any>();
 
   unclickable = true;
-  constructor() { }
+  constructor(public api: ApiService) { }
 
   ngOnInit(): void {console.log(this.data) }
 
@@ -39,6 +41,16 @@ export class DbRowComponent implements OnInit {
       // change the paid value
       row.paid = '1';
     }
+  }
+
+  deleteElement(category: string, id: any) {
+    this.rowDeleted.emit(id);
+    /* if (category == 'drain') {
+      this.api.deleteRelational(id).subscribe(res => {
+        console.log(res);
+        //this.data.splice(this.data.findIndex((el: any) => el.id == id))
+      });
+    } */
   }
 
 }
