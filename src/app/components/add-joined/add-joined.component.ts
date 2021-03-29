@@ -11,6 +11,7 @@ export class AddJoinedComponent implements OnInit {
   errorYear = false;
   errorUser = false;
   errorDrain = false;
+  data: any;
 
   constructor(public api: ApiService) { }
 

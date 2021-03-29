@@ -23,6 +23,8 @@ import { TestViewComponent } from './views/test-view/test-view.component';
 import { ListDrainComponent } from './views/list-drain/list-drain.component';
 import { ListUsersComponent } from './views/list-users/list-users.component';
 import { ListYearsComponent } from './views/list-years/list-years.component';
+import { JoinedComponent } from './views/joined/joined.component';
+
 import { EditComponent } from './views/edit/edit.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { AddComponent } from './views/add/add.component';
@@ -47,7 +49,8 @@ import { AddJoinedComponent } from './components/add-joined/add-joined.component
     SearchbarComponent,
     AddComponent,
     WarningComponent,
-    AddJoinedComponent
+    AddJoinedComponent,
+    JoinedComponent
   ],
   imports: [
     BrowserModule,
