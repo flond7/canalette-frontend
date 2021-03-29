@@ -13,6 +13,7 @@ export class ListDrainComponent implements OnInit {
 
   faWater = faWater;
   dataResult: any;
+  noData = false;
 
   listOfColumns = {
     "first_name": true,
@@ -29,6 +30,11 @@ export class ListDrainComponent implements OnInit {
 
   searchListResult(e:any) {
     this.dataResult = e;
+    //if searched data is not assigned to joined table and I've never done this check before
+    if(this.dataResult[0].id == null && this.noData == false) {
+      console.log("no data")
+      this.noData = true;
+    }
   }
 
 }

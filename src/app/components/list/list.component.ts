@@ -12,6 +12,7 @@ export class ListComponent implements OnChanges {
 
   @Input() data = [];
   @Input() listOfColumns: any;
+  @Input() noData: any;
   filteredData: any;
   paidDrains: any;
   showAlert = false;
@@ -33,7 +34,7 @@ export class ListComponent implements OnChanges {
   rowDeleted(e:any) {
     console.log(e);
     this.data.splice(this.data.findIndex((el:any) => el.id == e));
-    this.paidDrains = this.data.filter((el:any) => { return el.paid === '1' }).length;
+    //this.paidDrains = this.data.filter((el:any) => { return el.paid === '1' }).length;
   }
 
 }

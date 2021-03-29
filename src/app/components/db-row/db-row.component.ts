@@ -45,12 +45,7 @@ export class DbRowComponent implements OnInit {
 
   deleteElement(category: string, id: any) {
     this.rowDeleted.emit(id);
-    /* if (category == 'drain') {
-      this.api.deleteRelational(id).subscribe(res => {
-        console.log(res);
-        //this.data.splice(this.data.findIndex((el: any) => el.id == id))
-      });
-    } */
+      this.api.deleteRelational(id).subscribe(res => {console.log(res)});
   }
 
 }
