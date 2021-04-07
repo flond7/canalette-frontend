@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+/* FA ICONS */
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-joined',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./joined.component.sass']
 })
 export class JoinedComponent implements OnInit {
+
+  faLink = faLink; 
 
   constructor() { }
 

@@ -5,7 +5,7 @@
       <input [(ngModel)]="cf" (focusout)="searchUser()" name="" type="text" class="form-control" />
     </div>
     <div *ngIf="errorUser == true" class="col-6 text-danger d-flex align-items-end">
-      Quest'utente non si trova nel sistema.
+      {{messages.errorUser}}
     </div>
   </div>
 
@@ -15,7 +15,7 @@
       <input [(ngModel)]="num" (focusout)="searchDrain()" name="" type="text" class="form-control" />
     </div>
     <div *ngIf="errorDrain == true" class="col-6 text-danger d-flex align-items-end">
-      Questa canaletta non è stata inserita nel sistema.
+      {{messages.errorDrain}}
     </div>
   </div>
 
@@ -25,12 +25,30 @@
       <input [(ngModel)]="year" (focusout)="searchYear()" name="" type="text" class="form-control" />
     </div>
     <div *ngIf="errorYear == true" class="col-6 text-danger d-flex align-items-end">
-      Le tariffe per quest'anno non sono ancora state definite. Inseriscile prima di prseguire
+      {{messages.errorYear}}
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-6">
+      <label>Importo</label>
+      <input [(ngModel)]="amount" (focusout)="this.amount > 0 ? this.paid = 1 : this.paid = 0" name="" type="number" class="form-control" />
+    </div>
+    <div class="col-6 d-flex text-gray align-items-end mb-2">
+      Usa il punto come separatore decimale
     </div>
   </div>
 
 </div>
 
-<div class="row">
-
+<div class="row mt-4">
+  <div class="col-1 align-items-end">
+    <button class="btn btn-secondary my-2" (click)="addJoined()">Salva</button>
+  </div>
+  <div *ngIf="errorGeneral == true" class="col-6 d-flex align-items-center">
+    {{messages.errorGeneral}}
+  </div>
+  <div *ngIf="okMessage == true" class="col-6 text-success d-flex align-items-center">
+    {{messages.okMessage}}
+  </div>
 </div>
