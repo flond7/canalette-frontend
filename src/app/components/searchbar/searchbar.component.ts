@@ -45,7 +45,7 @@ export class SearchbarComponent implements OnInit {
         console.log(data);
       });
     } else if (this.category === "drainChannel") {
-      this.api.findSingleDrain(e).subscribe((data: any)=>{
+      this.api.findJoinedDrain(e).subscribe((data: any)=>{
         this.searchList.emit(data);
       });
     } /*else {

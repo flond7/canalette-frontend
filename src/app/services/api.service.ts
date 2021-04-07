@@ -39,7 +39,7 @@ export class ApiService {
     return this.httpClient.get(`${baseURL}/user/view/${cf}`)
   } */
   findSingleUser(cf:any) {
-    return this.httpClient.get(`${baseURL}/user/view`, cf)
+    return this.httpClient.get(`${baseURL}/user/view/${cf}`)
   }
 
   createUser(data:any): Observable<any> {
@@ -65,6 +65,9 @@ export class ApiService {
 
 
   /* DRAIN */
+  findJoinedDrain(num:any) {
+    return this.httpClient.get(`${baseURL}/drain/joined/${num}`);
+  }  // find all records of specific drain. search by drain number, not ID
   findSingleDrain(num:any) {
     return this.httpClient.get(`${baseURL}/drain/joined/${num}`);
   }  // find all records of specific drain. search by drain number, not ID
@@ -78,12 +81,9 @@ export class ApiService {
     return this.httpClient.delete(`${baseURL}/drain/delete/${id}`);
   }
 
-
-
   /* YEAR */
   findSingleYear(year:any): Observable<any> {
     return this.httpClient.get(`${baseURL}/tax/view/${year}`);
-
   }
 
   createYear(data:any): Observable<any> {
@@ -95,7 +95,10 @@ export class ApiService {
 
 
   /* DELETE ELEMENT AND JOINED TABLE */
-
+  createRelational(data:any): Observable<any> {
+    console.log(data);
+    return this.httpClient.post(`${baseURL}/relational/create`, data);
+  }
   deleteRelational(id:any): Observable<any> {
     return this.httpClient.delete(`${baseURL}/relational/delete/${id}`);
   }
