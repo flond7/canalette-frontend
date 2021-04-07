@@ -7,6 +7,37 @@
 
     <div class="col-9">
 
+      <div class="row no-gutters">
+        <div class="d-flex align-items-center align-items-center justify-content-center rounded-circle bg-secondary mr-3 mb-5"><fa-icon [icon]="faPlus"></fa-icon></div>
+        <h1 class="">Aggiungi</h1>
+      </div>
+
+      <div clasS="menu row no-gutters">
+        <div [ngClass]="{'bg-secondary': this.tab === 'user'}" class="tab-header d-flex border-right-gray align-items-center py-2 px-4" (click)="this.tab='user'">
+          <fa-icon class="mr-3" [icon]="faUser"></fa-icon> <h3 class="m-0">Utente</h3>
+        </div>
+        <div [ngClass]="{'bg-secondary': this.tab === 'drain'}" class="tab-header d-flex border-right-gray align-items-center py-2 px-4"(click)="this.tab='drain'">
+          <fa-icon class="mr-3" [icon]="faWater"></fa-icon> <h3 class="m-0">Canaletta</h3>
+        </div>
+        <div [ngClass]="{'bg-secondary': this.tab === 'year'}" class="tab-header d-flex align-items-center py-2 px-4" (click)="this.tab='year'">
+          <fa-icon class="mr-3" [icon]="faCalendar"></fa-icon> <h3 class="m-0">Imposte annuali</h3>
+        </div>
+
+      </div>
+
+      <div *ngIf="this.tab == 'user'" class="mt-3 w-100">
+          <app-anagrafic [status]="'new'" [view]="'user'"></app-anagrafic>
+      </div>
+
+      <div *ngIf="this.tab == 'drain'" class="mt-3 w-100">
+        <app-anagrafic [status]="'new'" [view]="'drain'"></app-anagrafic>
+      </div>
+
+      <div *ngIf="this.tab == 'year'" class="mt-3 w-100">
+        <app-anagrafic [status]="'new'" [view]="'year'"></app-anagrafic>
+      </div>
+
+     <!-- 
       <div class="row border-bottom-gray mb-4">
         <div class="row no-gutters ">
           <div class="d-flex align-items-center align-items-center justify-content-center rounded-circle bg-secondary mr-3"><fa-icon [icon]="faUser"></fa-icon></div>
@@ -37,8 +68,11 @@
         <div class="mt-3 w-100">
           <app-anagrafic [status]="'new'" [view]="'year'"></app-anagrafic>
         </div>
-      </div>
+      </div> -->
 
+      <!-- <div class="row no-gutters align-items-center justify-content-between mb-3">
+        <button class="" (click)="addJoined()">Aggiungi</button>
+      </div> -->
 
     </div>
 
