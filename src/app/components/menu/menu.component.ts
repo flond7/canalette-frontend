@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 /* FA ICONS */
-import { faPlus, faWater, faCalendar, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faWater, faCalendar, faUser, faLink } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu',
@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   faWater = faWater;
   faCalendar = faCalendar;
   faUser = faUser;
+  faLink = faLink;
 
   
   /* public buttonArray = [
