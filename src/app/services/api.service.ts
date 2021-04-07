@@ -69,7 +69,7 @@ export class ApiService {
     return this.httpClient.get(`${baseURL}/drain/joined/${num}`);
   }  // find all records of specific drain. search by drain number, not ID
   findSingleDrain(num:any) {
-    return this.httpClient.get(`${baseURL}/drain/joined/${num}`);
+    return this.httpClient.get(`${baseURL}/drain/view/${num}`);
   }  // find all records of specific drain. search by drain number, not ID
 
   createDrain(data:any): Observable<any> {
