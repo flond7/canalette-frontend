@@ -1,2 +1,9 @@
-<div *ngIf="showAlert === true" class="alert alert-danger m-0"><fa-icon [icon]="faExclamationTriangle" class="mr-3"></fa-icon>{{warningMessage}}</div> 
+<div *ngIf="showAlert === true" 
+ [ngClass]="{'alert-danger': this.type == 'danger', 'alert-success' : this.type == 'success', 'alert-warning' : this.type == 'warning'}"
+ class="alert m-0">
+  <fa-icon *ngIf="this.type == 'danger'" [icon]="faBomb" class="mr-3"></fa-icon>
+  <fa-icon *ngIf="this.type == 'success'" [icon]="faThumbsUp" class="mr-3"></fa-icon>
+  <fa-icon *ngIf="this.type == 'warning'" [icon]="faExclamationTriangle" class="mr-3"></fa-icon>
+  {{warningMessage}}
+</div> 
   
