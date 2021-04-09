@@ -18,8 +18,8 @@
       </div>
 
       <!-- LIST -->
-      <app-anagrafic></app-anagrafic>
-      <app-list [listOfColumns]="listOfColumns" [data]="dataResult"></app-list>
+      <!-- <app-anagrafic [status]="'view'" [view]="'drain'"></app-anagrafic> -->
+      <app-list [listOfColumns]="listOfColumns" [data]="dataResult" [noData]="noData"></app-list>
     </div>
 
   </div>
