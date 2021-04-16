@@ -1,0 +1,98 @@
+<div class="bg-dark-l rounded p-3 mb-4">
+
+  <!-- UTENTE -->
+  <div *ngIf="view === 'user'" class="">
+    <div class="row">
+      <div class="col-4">
+        <label>Nome</label>
+        <input [(ngModel)]="data.first_name" name="" type="text" class="form-control" />
+      </div>
+      <div class="col-4">
+        <label>Cognome</label>
+        <input [(ngModel)]="data.last_name" name="" type="text" class="form-control" />
+      </div>
+      <div class="col-4">
+        <label>Codice Fiscale</label>
+        <input [(ngModel)]="data.cf" name="" type="text" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-5">
+        <label for="email">Email</label>
+        <input [(ngModel)]="data.email" name="" type="text" class="form-control" />
+      </div>
+      <div class="col-3">
+        <label for="tel">Telefono</label>
+        <input [(ngModel)]="data.tel" name="" type="text" class="form-control" />
+      </div>
+      <div class="col-3">
+        <label>Stato</label>
+        <div class="select-wrapper">
+          <select [(ngModel)]="data.category">
+            <option value="citizen">Privato</option>
+            <option value="business">Azienda</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CANALETTA -->
+  <div *ngIf="view === 'drain'" class="">
+    <div class="row">
+      <form [formGroup]="drainForm" class="d-flex w-100">
+        <div class="col-4">
+          <label for="num">Numero</label><span *ngIf="">Inserisci il numero</span>
+          <input formControlName="num" [(ngModel)]="data.num" name="num" type="text" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label>Indirizzo canaletta</label>
+          <input formControlName="street" [(ngModel)]="data.street" name="street" type="text" class="form-control" />
+        </div>
+        <div class="col-2">
+          <label>Fogl.</label>
+          <input formControlName="fogl" [(ngModel)]="data.fogl" name="fogl" type="text" class="form-control" />
+        </div>
+        <div class="col-2">
+          <label>Map.</label>
+          <input formControlName="map" [(ngModel)]="data.map" name="map" type="text" class="form-control" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TASSE ANNUALI -->
+  <div *ngIf="view === 'year'" class="row mt-3">
+    <div class="col-4">
+      <label>Anno</label>
+      <input [(ngModel)]="data.year" name="" type="number" class="form-control" />
+    </div>
+    <div class="col-4">
+      <label>Imposta privato</label>
+      <input [(ngModel)]="data.taxCitizen" (focusout)="convertToDouble(data.taxCitizen, 'taxCitizen')" name="" type="number"
+        class="form-control" />
+    </div>
+    <div class="col-4">
+      <label for="first_name">Imposta azienda</label>
+      <input [(ngModel)]="data.taxBusiness" (focusout)="convertToDouble(data.taxBusiness, 'taxBusiness')" name="" type="text"
+        class="form-control" />
+    </div>
+  </div>
+
+  <!-- SAVE -->
+  <div *ngIf="status=='new'" class="row justify-content-end mt-3">
+    <div *ngIf="view=='drain'" class="col-3">
+      <button class="btn btn-secondary w-100 my-2" (click)="save()" [disabled]="!drainForm.valid">Salva canaletta</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- WARNING -->
+<div class="row">
+  <div class="col">
+    <app-warning class="w-100" [showAlert]="this.showAlert" [warningMessage]="this.message" [type]="this.type"></app-warning>
+  </div>
+</div>
