@@ -30,6 +30,10 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { AddComponent } from './views/add/add.component';
 import { WarningComponent } from './components/warning/warning.component';
 import { AddJoinedComponent } from './components/add-joined/add-joined.component';
+import { AnagUserComponent } from './components/anag-user/anag-user.component';
+import { AnagDrainComponent } from './components/anag-drain/anag-drain.component';
+import { AnagYearComponent } from './components/anag-year/anag-year.component';
+import { CsvComponent } from './views/csv/csv.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { AddJoinedComponent } from './components/add-joined/add-joined.component
     AddComponent,
     WarningComponent,
     AddJoinedComponent,
-    JoinedComponent
+    JoinedComponent,
+    AnagUserComponent,
+    AnagDrainComponent,
+    AnagYearComponent,
+    CsvComponent
   ],
   imports: [
     BrowserModule,
