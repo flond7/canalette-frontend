@@ -1,1 +1,41 @@
-<p>anag-drain works!</p>
+<div class="bg-dark-l rounded p-3 mb-4">
+  <form [formGroup]="drainForm" class="d-flex flex-column w-100">
+
+    <div class="row">
+      <div class="col-4">
+        <label for="num">Numero *</label><small
+          *ngIf="drainForm.controls['num']?.errors && (drainForm.controls['num'].dirty || drainForm.controls['num'].touched)"
+          class="text-danger ml-1">{{this.required}}</small>
+        <input formControlName="num" [(ngModel)]="data.num" name="num" type="text" class="form-control" />
+      </div>
+      <div class="col-4">
+        <label>Indirizzo canaletta</label>
+        <input formControlName="street" [(ngModel)]="data.street" name="street" type="text" class="form-control" />
+      </div>
+      <div class="col-2">
+        <label>Fogl.</label>
+        <input formControlName="fogl" [(ngModel)]="data.fogl" name="fogl" type="text" class="form-control" />
+      </div>
+      <div class="col-2">
+        <label>Map.</label>
+        <input formControlName="map" [(ngModel)]="data.map" name="map" type="text" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row justify-content-end mt-3">
+      <div class="col-3">
+        <button class="btn btn-secondary w-100 my-2" (click)="saveDrain()" [disabled]="!drainForm.valid">Salva
+          tasse</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<!-- WARNING -->
+<div *ngIf="warningMessage != '' " class="row">
+  <div class="col">
+    <app-warning class="w-100" [showAlert]="showAlert" [warningMessage]="warningMessage" [type]="type">
+    </app-warning>
+  </div>
+</div>
