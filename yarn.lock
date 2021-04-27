@@ -1584,13 +1584,6 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-angular2-csv@^0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/angular2-csv/-/angular2-csv-0.2.9.tgz#cccb0a2bd95fcf45fdb1e4853396d26655fb1c7e"
-  integrity sha512-RmVpaT2DSLJikPIxXfvhNHT/a03g+jM7Wsx0x+kNmCTuTqA1MAIPVhZPNgFvoSvZM898ACgcTSV6vvsDLdt1BA==
-  dependencies:
-    tslib "^1.9.0"
-
 animate.css@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-4.1.1.tgz#614ec5a81131d7e4dc362a58143f7406abd68075"
@@ -5906,6 +5899,13 @@ next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
+
+ngx-csv-parser@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/ngx-csv-parser/-/ngx-csv-parser-0.0.7.tgz#08b4b36d045bba71deab0609665ed5062e98928f"
+  integrity sha512-KCos2rxjkPqw/gQfd+0TYnf4bWHY4zyC8G5JB09DEnHrHz2RReKgSccJO+4SzApG7O6asDtUV4qfa94/uZ10ZQ==
+  dependencies:
+    tslib "^1.10.0"
 
 nice-try@^1.0.4:
   version "1.0.5"

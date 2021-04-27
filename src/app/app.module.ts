@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxCsvParserModule } from 'ngx-csv-parser';
 
 /* SERVICES */
 import { ApiService } from './services/api.service'
@@ -58,7 +59,7 @@ import { CsvComponent } from './views/csv/csv.component';
     AnagUserComponent,
     AnagDrainComponent,
     AnagYearComponent,
-    CsvComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -66,7 +67,9 @@ import { CsvComponent } from './views/csv/csv.component';
     FontAwesomeModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxCsvParserModule
+
   ],
   providers: [
     ApiService
