@@ -53,9 +53,27 @@ export class AnagUserComponent implements OnInit {
     };
 
     this.api.createUser(user).subscribe(
-      (res) => { this.warningMessage = GB.GlobalConstants.FORM_ERR_MESG.saved; this.type = 'success', this.showAlert = true},
-      (error) => { this.warningMessage = GB.GlobalConstants.FORM_ERR_MESG.dangerUser; this.type = 'danger', this.showAlert = true}
+      (res) => { console.log(res); 
+        this.warningMessage = GB.GlobalConstants.FORM_ERR_MESG.saved; 
+        this.type = 'success', 
+        this.showAlert = true},
+      (error) => { console.log(error); 
+        this.warningMessage = GB.GlobalConstants.FORM_ERR_MESG.dangerUser; 
+        this.type = 'danger', 
+        this.showAlert = true}
     );
+  }
+
+  reset() {
+    this.data = {"first_name": "",
+      "last_name": "",
+      "cf": "",
+      "email": "",
+      "tel": "",
+      "category": "citizen",
+    }
+    this.userForm.markAsUntouched();
+    this.userForm.markAsPristine();
   }
 
 }
