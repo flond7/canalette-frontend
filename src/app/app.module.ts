@@ -35,6 +35,7 @@ import { AnagUserComponent } from './components/anag-user/anag-user.component';
 import { AnagDrainComponent } from './components/anag-drain/anag-drain.component';
 import { AnagYearComponent } from './components/anag-year/anag-year.component';
 import { CsvComponent } from './views/csv/csv.component';
+import { BulkYearComponent } from './components/bulk-year/bulk-year.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,11 @@ import { CsvComponent } from './views/csv/csv.component';
     ListUsersComponent,
     ListYearsComponent,
     AnagraficComponent,
+    CsvComponent,
+    AnagUserComponent,
+    AnagDrainComponent,
+    AnagYearComponent,
+    BulkYearComponent,
     
     DbRowComponent,
     TestComponentComponent,
@@ -59,6 +65,7 @@ import { CsvComponent } from './views/csv/csv.component';
     AnagUserComponent,
     AnagDrainComponent,
     AnagYearComponent,
+    BulkYearComponent,
     
   ],
   imports: [
@@ -68,7 +75,7 @@ import { CsvComponent } from './views/csv/csv.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxCsvParserModule
+    NgxCsvParserModule,
 
   ],
   providers: [

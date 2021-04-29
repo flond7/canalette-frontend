@@ -16,6 +16,11 @@ export class AddComponent implements OnInit {
   faPlus = faPlus;
   tab = 'user';
 
+  csvYearData: any[] = [];
+  header = false;
+  yearReturnMsg = false;
+  yearLen = 0
+
   constructor(public api: ApiService) { }
 
   ngOnInit(): void {
