@@ -1,1 +1,36 @@
-<p>anag-year works!</p>
+<div class="bg-dark-l rounded p-3 mb-4">
+  <form [formGroup]="yearForm" class="d-flex flex-column w-100">
+
+    <div class="row">
+      <div class="col-4">
+        <label>Anno *</label><small
+          *ngIf="yearForm.controls['year']?.errors && (yearForm.controls['year'].dirty || yearForm.controls['year'].touched)"
+          class="text-danger ml-1">{{this.required}}</small>
+        <input formControlName="year" [(ngModel)]="data.year" name="year" type="text" class="form-control" />
+      </div>
+      <div class="col-4">
+        <label>Imposta privato</label>
+        <input formControlName="taxCitizen" [(ngModel)]="data.taxCitizen" name="taxCitizen" type="text" class="form-control" />
+      </div>
+      <div class="col-4">
+        <label>Imposta azienda</label>
+        <input formControlName="taxBusiness" [(ngModel)]="data.taxBusiness" name="taxBusiness" type="text" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row justify-content-end mt-3">
+      <div class="col-3">
+        <button class="btn btn-secondary w-100 my-2" (click)="saveDrain()" [disabled]="!yearForm.valid">Salva tasse</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<!-- WARNING -->
+<div *ngIf="warningMessage != '' " class="row">
+  <div class="col">
+    <app-warning class="w-100" [showAlert]="showAlert" [warningMessage]="warningMessage" [type]="type">
+    </app-warning>
+  </div>
+</div>
