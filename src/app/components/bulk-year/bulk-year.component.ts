@@ -3,7 +3,6 @@ import { ApiService } from 'src/app/services/api.service';
 import { NgxCsvParser } from 'ngx-csv-parser';
 import { NgxCSVParserError } from 'ngx-csv-parser';
 import * as GB from "src/app/constants";
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-bulk-year',
