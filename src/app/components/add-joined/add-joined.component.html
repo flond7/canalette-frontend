@@ -52,3 +52,20 @@
     {{messages.okMessage}}
   </div>
 </div>
+
+<h5 class="mt-4">Carica .csv</h5>
+
+<div class="row">
+  <div class="col-6">
+    <input type="file" #fileImportInput name="File Upload" id="csvFileUpload"
+      (change)="uploadMultipleRecords($event)" accept=".csv" />
+  </div>
+</div>
+
+<!-- WARNING -->
+<div class="row mt-4">
+  <div class="col">
+    <app-warning class="w-100" [showAlert]="showAlert" [warningMessage]="warningMessage" [type]="type">
+    </app-warning>
+  </div>
+</div>
