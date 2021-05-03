@@ -83,8 +83,11 @@ export class ApiService {
 
   /* YEAR */
   findSingleYear(year:any): Observable<any> {
-    return this.httpClient.get(`${baseURL}/tax/view/${year}`);
+    return this.httpClient.get(`${baseURL}/tax/joined/${year}`);
   }
+  findJoinedYear(num:any) {
+    return this.httpClient.get(`${baseURL}/tax/joined/${num}`);
+  }  // find all records of specific drain. search by drain number, not ID
 
   createYear(data:any): Observable<any> {
     //console.log(data);

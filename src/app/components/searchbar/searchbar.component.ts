@@ -22,7 +22,8 @@ export class SearchbarComponent implements OnInit {
   inputMessages = {
     "drainChannel": "Numero canaletta",
     "user": "CF utente",
-    "year": "Anno"} as const;
+    "year": "Anno"
+  } as const;
 
 
   constructor(public api: ApiService) { }
@@ -40,17 +41,19 @@ export class SearchbarComponent implements OnInit {
   searchElement(e: any) {
     //depending on the category use a different API, so we can have a single component but different behaviours
     if (this.category === "user") {
-      this.api.findSingleUser(e).subscribe((data: any)=>{
+      this.api.findSingleUser(e).subscribe((data: any) => {
         this.searchList.emit(data);
         console.log(data);
       });
     } else if (this.category === "drainChannel") {
-      this.api.findJoinedDrain(e).subscribe((data: any)=>{
+      this.api.findJoinedDrain(e).subscribe((data: any) => {
         this.searchList.emit(data);
       });
     } else if (this.category === "year") {
-      this.data = this.api.findSingleYear(e).subscribe(response => this.searchList.emit(response))
+      this.data = this.api.findJoinedYear(e).subscribe((data: any) => {
+        this.searchList.emit(data);
+      });
+
     }
- 
   }
 }
