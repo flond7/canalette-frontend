@@ -36,6 +36,8 @@ import { AnagDrainComponent } from './components/anag-drain/anag-drain.component
 import { AnagYearComponent } from './components/anag-year/anag-year.component';
 import { CsvComponent } from './views/csv/csv.component';
 import { BulkYearComponent } from './components/bulk-year/bulk-year.component';
+import { BulkRelationsComponent } from './components/bulk-relations/bulk-relations.component';
+import { AnagRelationsComponent } from './components/anag-relations/anag-relations.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { BulkYearComponent } from './components/bulk-year/bulk-year.component';
     AnagDrainComponent,
     AnagYearComponent,
     BulkYearComponent,
+    BulkRelationsComponent,
+    AnagRelationsComponent,
     
   ],
   imports: [

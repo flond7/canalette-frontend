@@ -97,6 +97,7 @@ export class AddJoinedComponent implements OnInit {
     }
   }
 
+  //BULK CSV FUNCTIONS
   addRelation(obj: any) {
     //find ids
     forkJoin([
@@ -151,7 +152,6 @@ export class AddJoinedComponent implements OnInit {
     this.addRelation(obj);
   }
 
-  // Your applications input change listener for the CSV File
   uploadMultipleRecords($event: any): void {
     const files = $event.srcElement.files;  // Select the files from the event
     this.everythingOk = 0;

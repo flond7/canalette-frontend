@@ -1,0 +1,72 @@
+<div class="bg-dark-l rounded p-3 mb-4">
+  <form [formGroup]="relationForm" class="d-flex flex-column w-100">
+
+    <div class="row w-100">
+      <div class="col-6">
+        <label>Anno *</label><small
+          *ngIf="relationForm.controls['year']?.errors && (relationForm.controls['year'].dirty || relationForm.controls['year'].touched)"
+          class="text-danger ml-1">{{this.required}}</small>
+        <input formControlName="year" [(ngModel)]="data.id_year" name="year" type="text" class="form-control"
+          (focusout)="searchYear()" required />
+      </div>
+      <div class="col-6 d-flex align-items-end">
+        <small
+          *ngIf="errorYear == true"
+          class="text-danger ml-1">{{this.errorYearMsg}} errore anno</small>
+      </div>
+    </div>
+
+    <div class="row w-100">
+      <div class="col-6">
+        <label>Num canaletta *</label><small
+          *ngIf="relationForm.controls['num']?.errors && (relationForm.controls['num'].dirty || relationForm.controls['num'].touched)"
+          class="text-danger ml-1">{{this.required}}</small>
+        <input formControlName="num" (focusout)="searchDrain()" [(ngModel)]="data.num" name="num" type="text" class="form-control" required />
+      </div>
+      <div class="col-6 d-flex align-items-end">
+        <small
+          *ngIf="errorDrain == true"
+          class="text-danger ml-1">{{this.errorDrainMsg}}</small>
+      </div>
+    </div>
+
+    <div class="row w-100">
+      <div class="col-6">
+        <label>Codice Fiscale *</label><small
+          *ngIf="relationForm.controls['cf']?.errors && (relationForm.controls['cf'].dirty || relationForm.controls['cf'].touched)"
+          class="text-danger ml-1">{{this.required}}</small>
+        <input formControlName="cf" (focusout)="searchUser()" [(ngModel)]="data.cf" name="cf" type="text" class="form-control" required />
+      </div>
+      <div class="col-6 d-flex align-items-end">
+        <small
+          *ngIf="errorUser == true"
+          class="text-danger ml-1">{{this.errorUserMsg}}</small>
+      </div>
+    </div>
+
+    <div class="row w-100">
+      <div class="col-6">
+        <label>Importo pagato</label><small
+          *ngIf="relationForm.controls['amount_paid']?.errors && (relationForm.controls['amount_paid'].dirty || relationForm.controls['amount_paid'].touched)"
+          class="text-danger ml-1">{{this.required}}</small>
+        <input formControlName="amount_paid" [(ngModel)]="data.amount_paid" name="amount_paid" type="text"
+          class="form-control" required />
+      </div>
+    </div>
+
+
+    <div class="row mt-4">
+      <div class="col-1 align-items-end">
+        <button class="btn btn-secondary my-2" (click)="addRelation()">Salva</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- WARNING -->
+<div class="row">
+  <div class="col">
+    <app-warning class="w-100" [showAlert]="showAlert" [warningMessage]="warningMessage" [type]="type">
+    </app-warning>
+  </div>
+</div>
