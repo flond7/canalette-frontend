@@ -14,7 +14,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 export class SearchbarComponent implements OnInit {
   faSearch = faSearch;
 
-  @Input() category: any; //DB NAMES: drainChannel, taxes, users, relational
+  @Input() category: any; //DB NAMES: drainChannel, year, users, relational
   @Output() searchList = new EventEmitter<any>();
   data: any;
   searchMessage = ""
@@ -48,9 +48,9 @@ export class SearchbarComponent implements OnInit {
       this.api.findJoinedDrain(e).subscribe((data: any)=>{
         this.searchList.emit(data);
       });
-    } /*else {
+    } else if (this.category === "year") {
       this.data = this.api.findSingleYear(e).subscribe(response => this.searchList.emit(response))
-    } */
+    }
  
   }
 }
