@@ -105,5 +105,8 @@ export class ApiService {
   deleteRelational(id:any): Observable<any> {
     return this.httpClient.delete(`${baseURL}/relational/delete/${id}`);
   }
+  findSingleRelational(id:any): Observable<any> {
+    return this.httpClient.get(`${baseURL}/relational/view/${id}`);
+  }
 
 }
