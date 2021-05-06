@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 
 
 /* FA ICONS */
-import { faPencilAlt, faTimes, faMoneyBillAlt, faCheck, faThumbsUp, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faTimes, faMoneyBillAlt, faCheck, faThumbsUp, faTrashAlt, faCode } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-db-row',
@@ -19,6 +19,7 @@ export class DbRowComponent implements OnInit {
   faCheck = faCheck;
   faThumbsUp = faThumbsUp;
   faTrashAlt = faTrashAlt;
+  faCode = faCode;
 
   @Input() data: any;
   @Input() listOfColumns: any;
@@ -43,9 +44,9 @@ export class DbRowComponent implements OnInit {
     }
   }
 
-  deleteElement(category: string, id: any) {
+/*   deleteElement(category: string, id: any) {
     this.rowDeleted.emit(id);
       this.api.deleteRelational(id).subscribe(res => {console.log(res)});
-  }
+  } */
 
 }
