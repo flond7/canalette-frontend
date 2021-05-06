@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 import { forkJoin } from 'rxjs';
@@ -35,10 +35,14 @@ export class AnagRelationsComponent implements OnInit {
   //ALERT VARS
   type = 'success';
   showAlert = false;
+
   //JOINED ADD
   everythingOk = 0;
   uploadLen: any;
 
+  //edit vars
+  @Input() state: any;    //new | edit
+  @Input() inputData: any;    //new | edit
 
   constructor(public api: ApiService) { }
 
@@ -48,6 +52,7 @@ export class AnagRelationsComponent implements OnInit {
     year: new FormControl('', [Validators.required]),
     cf: new FormControl('', [Validators.required]),
     amount_paid: new FormControl(''),
+    amount_computed: new FormControl(''),
   });
   get fr() { return this.relationForm.controls; }
 
@@ -56,6 +61,12 @@ export class AnagRelationsComponent implements OnInit {
     this.errorUserMsg = GB.GlobalConstants.FORM_ERR_MESG.joinedErrUser;
     this.errorYearMsg = GB.GlobalConstants.FORM_ERR_MESG.joinedErrYear;
     this.required = GB.GlobalConstants.FORM_ERR_MESG.required;
+    /* if edit then get data and show them */
+    if (this.state == 'edit') {
+      this.data = this.inputData;
+      console.log("INSIDE COMP");
+      console.log(this.data);
+    }
   }
   searchYear() {
     this.errorYear = false;
@@ -152,6 +163,7 @@ export class AnagRelationsComponent implements OnInit {
       );
     });
   };
+
   reset(){
     this.data = {"id_year": "", "id_user":"","id_drain":"", "cf": "", "num": "", "amount_paid": 0, "amount_computed": 0, "paid": 0 };
     this.relationForm.markAsUntouched();
