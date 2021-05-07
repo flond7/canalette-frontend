@@ -23,6 +23,8 @@ export class AnagraficComponent implements OnInit {
     dangerYear: "Errore: probabilmente hai già inserito i dati per quest'anno",
     dangerDrain: "Errore: probabilmente hai già inserito i dati per questa canaletta",
     dangerUser: "Errore: probabilmente hai già inserito i dati per quest'utente",
+    email: "Inserisci una mail valida",
+    required: "Campo obbligatorio"
   };
 
   listOfColumns = {
@@ -52,7 +54,23 @@ export class AnagraficComponent implements OnInit {
       map: new FormControl('0'),
     });
     get fd(){return this.drainForm.controls;}
+    
+    /* REACTIVE FORM YEAR */
+    yearForm = new FormGroup({
+      year: new FormControl('', [Validators.required]),
+      taxCitizen: new FormControl('', [Validators.required]),
+      taxBusiness: new FormControl('', [Validators.required]),
+    });
+    get fy(){return this.yearForm.controls;}
 
+    /* REACTIVE FORM USER */
+    userForm = new FormGroup({
+      first_name: new FormControl('', [Validators.required]),
+      last_name: new FormControl('', [Validators.required]),
+      cf: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.email]),
+    });
+    get fu(){return this.userForm.controls;}
 
 
   ngOnInit(): void {
@@ -62,9 +80,9 @@ export class AnagraficComponent implements OnInit {
   checkStatus() {
     if (this.status === "new") {
       this.data = {
-        "year": 2020,
-        "taxCitizen": 0.00,
-        "taxBusiness": 0.00,
+        "year": '',
+        "taxCitizen": '',
+        "taxBusiness": '',
         "first_name": "",
         "last_name": "",
         "cf": "",
@@ -104,6 +122,32 @@ export class AnagraficComponent implements OnInit {
     } else {
       console.log("UPDATE")
     }
+  }
+
+  saveYear() {
+    let year = {
+      "id_year": this.data.year,
+      "taxCitizen": parseFloat(this.data.taxCitizen),
+      "taxBusiness": parseFloat(this.data.taxBusiness)
+    }
+    this.api.createYear(year).subscribe(
+      (res) => {this.success();},
+      (error) => {this.signalError('dangerYear')});
+  }
+
+  saveUser() {
+    let user = {
+      "first_name": this.data.first_name,
+      "last_name": this.data.last_name,
+      "cf": this.data.cf,
+      "email": this.data.email,
+      "tel": this.data.tel,
+      "category": this.data.category,
+    };
+    this.api.createUser(user).subscribe(res => {
+      this.success();
+      console.log(res)
+    });
   }
 
   success(){
@@ -158,6 +202,19 @@ export class AnagraficComponent implements OnInit {
 
   convertToDouble(e: any, cat: string) {
     this.data[cat] = parseFloat(e).toFixed(2);
+  }
+
+  checkWarning(msg:any) {
+    // if e is true then no error
+    if(msg = 'ok') {
+      this.message=this.messages.saved;
+      this.type='success';
+      this.showAlert = true;
+    } else {
+      this.message = this.messages[msg];
+      this.type='danger';
+      this.showAlert = true;
+    }
   }
 
 }
