@@ -1,1 +1,33 @@
-<p>list-years works!</p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-3">
+      <app-menu></app-menu>
+    </div>
+
+    <div class="col-9">
+
+      <div class="row no-gutters align-items-center justify-content-between mb-3">
+        <div class="row">
+          <div class="d-flex align-items-center align-items-center justify-content-center rounded-circle bg-secondary mr-3"><fa-icon [icon]="faCalendar"></fa-icon></div>
+          <h1 class="">Visualizzazione annuale</h1>
+        </div>
+        <div class="">
+          <app-searchbar [category]="'year'" (searchList)="searchListResult($event)"></app-searchbar>
+        </div>
+      </div>
+
+      <!-- LIST -->
+      <!-- <app-anagrafic [status]="'view'" [view]="'drain'"></app-anagrafic> -->
+      <app-list [listOfColumns]="listOfColumns" [data]="dataResult" [noData]="noData"></app-list>
+    </div>
+
+    <div class="">
+      Genera fatture. Inserisci il primo numero della fattura
+      Genera automaticamente i numeri successivi
+      genera xml
+      fai comparire icona per il download xml
+    </div>
+
+  </div>
+</div>
