@@ -36,10 +36,6 @@ export class AnagRelationsComponent implements OnInit {
   type = 'success';
   showAlert = false;
 
-  //JOINED ADD
-  everythingOk = 0;
-  uploadLen: any;
-
   //edit vars
   @Input() state: any;    //new | edit
   @Input() inputData: any;    //new | edit
@@ -99,25 +95,6 @@ export class AnagRelationsComponent implements OnInit {
         (error) => { this.errorDrain = true; })
   }
 
-  addJoined() {
-    /* if (this.year == undefined || this.id_user == undefined || this.id_drain == undefined) {
-      this.errorGeneral = true;
-    } else {
-      //paid 1 for true
-      let data = {
-        "amount_paid": this.amount_paid,
-        "paid": this.paid,
-        "id_drain": this.id_drain,
-        "id_user": this.id_user,
-        "id_year": this.year
-      }
-      this.api.createRelational(data).subscribe(res => {
-        console.log(res)
-        this.okMessage = true;
-      })
-    } */
-  }
-
   addRelation() {
     //find ids
     forkJoin([
@@ -135,6 +112,7 @@ export class AnagRelationsComponent implements OnInit {
       let moneyToPay = parseFloat(year[0][yearTaxType]) +
         (parseFloat(year[0][yearTaxType]) * parseFloat(year[0][userIvaType]) / 100) +
         parseFloat(year[0]['mailing_money']);
+
       //save IDs and other data in the object
       let obj = { //because with this TS version you can't use delete unless the property is undefined
         "amount_computed": moneyToPay,
@@ -144,11 +122,9 @@ export class AnagRelationsComponent implements OnInit {
         "paid": this.data.amount_paid > 0 ? 1 : 0,
         "amount_paid": this.data.amount_paid
       }
-      //delete this.data.cf;
-      //delete this.data.num;
+      // single upload
       this.api.createRelational(obj).subscribe(
         (res) => {
-          this.everythingOk++;
           this.warningMessage = GB.GlobalConstants.FORM_ERR_MESG.saved;
           this.type = 'success';
           this.showAlert = true;
@@ -158,7 +134,7 @@ export class AnagRelationsComponent implements OnInit {
           console.log(error);
           this.type = 'danger';
           this.showAlert = true;
-          this.warningMessage = "Sono stati inseriti solo " + this.everythingOk + " record. Controlla il file excel e che i dati per questi anni non si trovino già nel database"
+          this.warningMessage = GB.GlobalConstants.FORM_ERR_MESG.joinedErr
         }
       );
     });
