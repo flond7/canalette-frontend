@@ -43,7 +43,6 @@ export class ApiService {
   }
 
   createUser(data:any): Observable<any> {
-    console.log(data);
     return this.httpClient.post(`${baseURL}/user/create`, data);
   }
 /*
@@ -73,7 +72,6 @@ export class ApiService {
   }  // find all records of specific drain. search by drain number, not ID
 
   createDrain(data:any): Observable<any> {
-    console.log(data);
     return this.httpClient.post(`${baseURL}/drain/create`, data);
   }
 
@@ -83,14 +81,13 @@ export class ApiService {
 
   /* YEAR */
   findSingleYear(year:any): Observable<any> {
-    return this.httpClient.get(`${baseURL}/tax/joined/${year}`);
+    return this.httpClient.get(`${baseURL}/tax/view/${year}`);
   }
   findJoinedYear(num:any) {
     return this.httpClient.get(`${baseURL}/tax/joined/${num}`);
   }  // find all records of specific drain. search by drain number, not ID
 
   createYear(data:any): Observable<any> {
-    //console.log(data);
     return this.httpClient.post(`${baseURL}/tax/create`, data);
   }
 
@@ -99,7 +96,6 @@ export class ApiService {
 
   /* DELETE ELEMENT AND JOINED TABLE */
   createRelational(data:any): Observable<any> {
-    console.log(data);
     return this.httpClient.post(`${baseURL}/relational/create`, data);
   }
   deleteRelational(id:any): Observable<any> {
