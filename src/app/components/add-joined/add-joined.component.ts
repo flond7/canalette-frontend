@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { NgxCsvParser } from 'ngx-csv-parser';
 import { NgxCSVParserError } from 'ngx-csv-parser';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import * as GB from "src/app/constants";
+/* FA ICONS */
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-joined',
@@ -11,6 +14,8 @@ import * as GB from "src/app/constants";
   styleUrls: ['./add-joined.component.sass']
 })
 export class AddJoinedComponent implements OnInit {
+
+  faTrashAlt = faTrashAlt;
 
   errorYear = false;
   errorUser = false;
@@ -35,16 +40,34 @@ export class AddJoinedComponent implements OnInit {
   csvData: any[] = [];
   header = false;
 
-
+  /* warning vars */
   type = 'success';
   showAlert = false;
   everythingOk = 0;
   uploadLen: any;
 
-  constructor(public api: ApiService, private ngxCsvParser: NgxCsvParser) { }
+  /* edit page vars */
+  edit = false;
+  id_joined = 0;
+  data: any;
+  state = "new";  //new | edit 
+
+  constructor(public api: ApiService, private route: ActivatedRoute, private ngxCsvParser: NgxCsvParser) { }
 
   ngOnInit(): void {
-
+    this.route.queryParams.subscribe(params => {
+      if (params['id']) {
+        this.edit = true
+        this.id_joined = params['id'];
+        this.api.findSingleRelational(this.id_joined).subscribe(res => {
+          this.data = res[0][0];
+          this.state = "edit";
+          console.log("INPUT DATA");
+          console.log(this.data);
+        })
+      }
+      console.log(this.edit);
+    });
   }
 
   searchYear() {
@@ -170,5 +193,10 @@ export class AddJoinedComponent implements OnInit {
       })
   }
 
+  /* EDIT FUNCTIONS */
+  deleteElement(id: any) {
+    //this.rowDeleted.emit(id);
+    this.api.deleteRelational(id).subscribe(res => { console.log(res) });
+  }
 
 }

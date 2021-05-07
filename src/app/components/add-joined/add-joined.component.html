@@ -1,4 +1,4 @@
-<app-anag-relations></app-anag-relations>
+<app-anag-relations [inputData]="data" [state]="state"></app-anag-relations>
 
 <h5 class="mt-4">Carica .csv</h5>
 
@@ -7,6 +7,11 @@
     <input type="file" #fileImportInput name="File Upload" id="csvFileUpload"
       (change)="uploadMultipleRecords($event)" accept=".csv" />
   </div>
+</div>
+
+<!-- visualize only on edit -->
+<div *ngIf="edit == true">
+  <button class="btn btn-secondary" ><fa-icon [icon]="faTrashAlt"></fa-icon></button>
 </div>
 
 <!-- WARNING -->
