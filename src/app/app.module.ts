@@ -20,7 +20,6 @@ import { AnagraficComponent } from './components/anagrafic/anagrafic.component';
 
 /* VIEWS */
 import { HomeComponent } from './views/home/home.component';
-import { TestViewComponent } from './views/test-view/test-view.component';
 import { ListDrainComponent } from './views/list-drain/list-drain.component';
 import { ListUsersComponent } from './views/list-users/list-users.component';
 import { ListYearsComponent } from './views/list-years/list-years.component';
@@ -41,7 +40,6 @@ import { AnagRelationsComponent } from './components/anag-relations/anag-relatio
 @NgModule({
   declarations: [
     AppComponent,
-    TestViewComponent,
     HomeComponent,
     ListDrainComponent,
     ListUsersComponent,
