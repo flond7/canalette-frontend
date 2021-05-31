@@ -58,22 +58,19 @@ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git (change rep
 - add an .htaccess file to the dist folder (search on github, canalette-frontend for a template)
 
 # on the server
-- copy the dist folder in /var/www/html/ and check the permissions
-
-- change permissions to amministratore  
+- copy the dist folder in /var/www/html/ and check the permissions and eventually change permissions to amministratore  
   sudo chown -R root:root /var/www/html/NAME-OF-THE-APP
 
-# test frontend
-- PROBLEM: doesn't find runtime.js or other files, check if base is correct in index.html
-
-
-# server config
 - in /etc/apache2/apache2.conf add
   <Directory "/var/www/html/name-of-the-app">
     Options Indexes FollowSymLinks
     AllowOverride All
     Require all granted
   </Directory>
+
+# test frontend
+- PROBLEM: doesn't find runtime.js or other files, check if base is correct in index.html
+
 
 
 ## ANGULAR COMMANDS
