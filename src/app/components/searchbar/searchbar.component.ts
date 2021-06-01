@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-
-import { Observable } from 'rxjs';
+import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
+import * as GB from "src/app/constants";
 
 /* FA ICONS */
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -17,20 +17,19 @@ export class SearchbarComponent implements OnInit {
   @Input() category: any; //DB NAMES: drainChannel, year, users, relational
   @Output() searchList = new EventEmitter<any>();
   data: any;
-  searchMessage = ""
+  searchMessage: any;
 
-  inputMessages = {
-    "drainChannel": "Numero canaletta",
-    "user": "CF utente",
-    "year": "Anno"
-  } as const;
-
-
+  /* REACTIVE FORM SEARCHBAR */
+  /* searchBar = new FormGroup({
+    searchMessage: new FormControl(''),
+  });
+  get fs(){return this.searchBar.controls;}
+ */
   constructor(public api: ApiService) { }
 
   ngOnInit(): void {
     //scegli la stringa per la barra
-    this.searchMessage = this.findSearchBarMessage(this.inputMessages, this.category);
+    this.searchMessage = this.findSearchBarMessage(GB.GlobalConstants.SEARCH_BAR_MESG, this.category);
   }
 
   findSearchBarMessage<T, K extends keyof T>(obj: T, key: K) {
@@ -43,7 +42,7 @@ export class SearchbarComponent implements OnInit {
     if (this.category === "user") {
       this.api.findSingleUser(e).subscribe((data: any) => {
         this.searchList.emit(data);
-        console.log(data);
+
       });
     } else if (this.category === "drainChannel") {
       this.api.findJoinedDrain(e).subscribe((data: any) => {
@@ -56,4 +55,5 @@ export class SearchbarComponent implements OnInit {
 
     }
   }
+
 }

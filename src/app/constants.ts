@@ -12,7 +12,12 @@ export class GlobalConstants {
     joinedErrUser: "Questo utente non si trova nel sistema",
     joinedErrDrain: "Questa canaletta non è stata inserita nel sistema",
     joinedErr: "Questa relazione è già stata inserita"
-  }
+  };
   
+  public static SEARCH_BAR_MESG : { [key: string]: any } = {
+    drainChannel: "Numero canaletta",
+    user: "CF utente",
+    year: "Anno"
+  };
 
 }
