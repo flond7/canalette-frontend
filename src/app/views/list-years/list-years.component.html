@@ -16,9 +16,6 @@
           <app-searchbar [category]="'year'" (searchList)="searchListResult($event)"></app-searchbar>
         </div>
       </div>
-
-      <!-- LIST -->
-      <!-- <app-anagrafic [status]="'view'" [view]="'drain'"></app-anagrafic> -->
       <app-list [listOfColumns]="listOfColumns" [data]="dataResult" [noData]="noData"></app-list>
     </div>
 
