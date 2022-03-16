@@ -48,7 +48,7 @@ export class MenuComponent implements OnInit {
     } else {
       let b:any = document.getElementsByTagName("html");
       let c:any = document.getElementsByTagName("body");
-      let d:any = document.getElementsByClassName("bg-dark-l")
+      let d:any = document.getElementsByClassName("bg-light-l")
       b[0].classList.remove("light-theme");
       c[0].classList.remove("light-theme");
       d[0].classList.add("bg-dark-l");
