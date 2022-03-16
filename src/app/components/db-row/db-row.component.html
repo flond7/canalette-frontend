@@ -1,6 +1,6 @@
 <div class="row border-bottom-gray py-2 align-items-center justify-content-start">
   <div *ngIf="listOfColumns.year" class="col-1">{{data.id_year}}</div>
-  <div *ngIf="listOfColumns.first_name" class="col-2">{{data.first_name}} {{data.last_name}}</div>
+  <div *ngIf="listOfColumns.first_name" class="col-4">{{data.first_name}} {{data.last_name}}</div>
   <div *ngIf="listOfColumns.drain" class="col-1">{{data.num}}</div>
   <!-- <div *ngIf="listOfColumns.paid" class="col-1">
     <button *ngIf="data.paid === '1'" class="btn no-hover btn-transparent" (click)="paidChange(data)"><fa-icon [icon]="faMoneyBillAlt"></fa-icon></button>
@@ -19,15 +19,15 @@
   <div class="col-2 d-flex flex-row">
     <input [ngModel]="data.bill_number" (ngModelChange)="changeBillNumber($event)" type="text" class="bg-dark form-control w-100" />
   </div>
-  <div class="col-1 d-flex flex-row">
+ <!--  <div class="col-1 d-flex flex-row">
     <button class="btn btn-secondary mr-3" [routerLink]=""><fa-icon [icon]="faCode"></fa-icon></button>
-  </div>
+  </div> -->
 
 
-  <div class="col-1 d-flex flex-row">
-    <button class="btn btn-secondary mr-3" [routerLink]="['/add-joined']" [queryParams]="{id: data.id}"><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+  <!-- <div class="col-1 d-flex flex-row">
+    <button class="btn btn-secondary mr-3" [routerLink]="['/add-joined']" [queryParams]="{id: data.id}"><fa-icon [icon]="faPencilAlt"></fa-icon></button> -->
    <!--  <button class="btn btn-secondary" (click)="deleteElement('drain', data.id)"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
-  --> </div>
+  --> <!-- </div> -->
 
   <!-- <div class="col-1 d-flex flex-row">
     <button *ngIf="unclickable === false" (click)="unclickable = true" class="btn btn-success animate__animated animate__fadeIn"><fa-icon [icon]="faCheck"></fa-icon></button>
