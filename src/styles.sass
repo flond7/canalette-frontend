@@ -3,12 +3,25 @@
 @import ~animate.css/animate.min
 
 body, html
-    background-color: $dark !important
+    background-color: $dark
     color: #fff !important
     height: 100vh
     display: flex
     align-items: center
     justify-content: center
+
+.light-theme 
+    background-color: white !important
+    color: black !important
+.light-theme button
+    color: black !important
+.light-theme form, .light-theme app-anag-user
+    background-color: white !important
+    color: black !important
+.light-theme input, .light-theme select 
+    background-color: #bbb !important
+    color: black !important
+
 h3
     font-size: 1.3rem !important
 .container
@@ -24,13 +37,13 @@ h3
     border-radius: 5px
     border-top-right-radius: 0 !important
     border-bottom-right-radius: 0 !important
-    background-color: $dark-l
-    border: none
+    background-color: $dark-l !important
+    //border: none
     color: $gray
 .button-input
     border-radius: 5px
     border-top-left-radius: 0
-    border-bottom-left-radius: 0 
+    border-bottom-left-radius: 0
 
 /* FORM STYLES*/
 input, select

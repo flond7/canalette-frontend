@@ -9,7 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
 
 /* SERVICES */
-import { ApiService } from './services/api.service'
+import { ApiService } from './services/api.service';
+import { ThemeService } from './services/theme.service';
 
 /* COMPONENTS */
 import { DbRowComponent } from './components/db-row/db-row.component';
@@ -79,7 +80,8 @@ import { AnagRelationsComponent } from './components/anag-relations/anag-relatio
 
   ],
   providers: [
-    ApiService
+    ApiService,
+    ThemeService
   ],
   bootstrap: [AppComponent]
 })

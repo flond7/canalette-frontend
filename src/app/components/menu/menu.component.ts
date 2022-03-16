@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { ThemeService } from 'src/app/services/theme.service';
 
 /* FA ICONS */
-import { faPlus, faWater, faCalendar, faUser, faLink, faFileCsv } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faWater, faCalendar, faUser, faLink, faFileCsv, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu',
@@ -17,6 +18,9 @@ export class MenuComponent implements OnInit {
   faUser = faUser;
   faLink = faLink;
   faFileCsv = faFileCsv;
+  faMoon = faMoon;
+  faSun = faSun;
+  colorTheme : any;
 
   
   /* public buttonArray = [
@@ -26,9 +30,30 @@ export class MenuComponent implements OnInit {
     {"text": "Storico utente", "link": "/link-user", "icon": "'faWater'"},
   ] */
 
-  constructor() { }
+  constructor(public theme: ThemeService) { }
 
   ngOnInit(): void {
+  }
+
+  changeTheme() {
+    this.colorTheme = this.theme.updateColorTheme();
+    if (this.colorTheme === "light-mode") {
+      let b:any = document.getElementsByTagName("html");
+      let c:any = document.getElementsByTagName("body");
+      let d:any = document.getElementsByClassName("bg-dark-l")
+      b[0].classList.add("light-theme");
+      c[0].classList.add("light-theme");
+      d[0].classList.add("bg-light-l");
+      d[0].classList.remove("bg-dark-l");
+    } else {
+      let b:any = document.getElementsByTagName("html");
+      let c:any = document.getElementsByTagName("body");
+      let d:any = document.getElementsByClassName("bg-dark-l")
+      b[0].classList.remove("light-theme");
+      c[0].classList.remove("light-theme");
+      d[0].classList.add("bg-dark-l");
+      d[0].classList.remove("bg-light-l");
+    }
   }
 
 }
