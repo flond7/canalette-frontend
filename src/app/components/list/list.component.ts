@@ -13,18 +13,23 @@ export class ListComponent implements OnChanges {
   @Input() data = [];
   @Input() listOfColumns: any;
   @Input() noData: any;
+
   filteredData: any;
   paidDrains: any;
   showAlert = false;
+
+  // generate bill numbers
+  numberAdded: any;
+  indexAdded: any
 
   constructor() { }
 
   ngOnChanges(): void {
     //console.log(this.listOfColumns);
     //console.log(this.data);
-    if(this.data != undefined) {  //to avoid error when data is not loaded yet
+    /* if(this.data != undefined) {  //to avoid error when data is not loaded yet
       this.paidDrains = this.data.filter((el:any) => { return el.paid === '1' }).length;
-    }
+    } */
   }
 
   rowChanged(e:boolean) {
@@ -35,6 +40,21 @@ export class ListComponent implements OnChanges {
     console.log(e);
     this.data.splice(this.data.findIndex((el:any) => el.id == e));
     //this.paidDrains = this.data.filter((el:any) => { return el.paid === '1' }).length;
+  }
+
+  addedBillNumber(e: any, i: any){
+    this.indexAdded = i;
+    this.numberAdded = e;
+  }
+
+  generateBillNumbers() {
+    //let firstBill = 
+    console.log(this.data);
+    this.data.forEach(row => {
+      console.log(row)
+      this.indexAdded++;
+    })
+
   }
 
 }

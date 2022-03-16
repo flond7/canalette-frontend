@@ -36,6 +36,8 @@
 
       <div *ngIf="this.tab == 'user'" class="mt-3 w-100">
         <app-anag-user [status]="'new'"></app-anag-user>
+        <h5 class="">Carica un file .csv con diversi record</h5>
+        <app-bulk-year [uploadTab]="'user'"></app-bulk-year>
       </div>
 
       <div *ngIf="this.tab == 'drain'" class="mt-3 w-100">

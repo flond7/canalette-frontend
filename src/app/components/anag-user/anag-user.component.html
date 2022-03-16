@@ -32,12 +32,21 @@
         <label for="tel">Telefono</label>
         <input formControlName="tel" [(ngModel)]="data.tel" name="" type="text" class="form-control" />
       </div>
-      <div class="col-3">
+      <div class="col-2">
         <label>Stato</label>
         <div class="select-wrapper">
           <select formControlName="category" [(ngModel)]="data.category">
             <option value="citizen">Privato</option>
             <option value="business">Azienda</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-2">
+        <label>Iva</label>
+        <div class="select-wrapper">
+          <select formControlName="tax_type" [(ngModel)]="data.tax_type">
+            <option value="ivaFull">Full</option>
+            <option value="ivaSplit">Split</option>
           </select>
         </div>
       </div>

@@ -20,11 +20,11 @@ export class SearchbarComponent implements OnInit {
   searchMessage: any;
 
   /* REACTIVE FORM SEARCHBAR */
-  /* searchBar = new FormGroup({
+  searchBar = new FormGroup({
     searchMessage: new FormControl(''),
   });
   get fs(){return this.searchBar.controls;}
- */
+
   constructor(public api: ApiService) { }
 
   ngOnInit(): void {
@@ -42,7 +42,6 @@ export class SearchbarComponent implements OnInit {
     if (this.category === "user") {
       this.api.findSingleUser(e).subscribe((data: any) => {
         this.searchList.emit(data);
-
       });
     } else if (this.category === "drainChannel") {
       this.api.findJoinedDrain(e).subscribe((data: any) => {
@@ -52,7 +51,6 @@ export class SearchbarComponent implements OnInit {
       this.data = this.api.findJoinedYear(e).subscribe((data: any) => {
         this.searchList.emit(data);
       });
-
     }
   }
 

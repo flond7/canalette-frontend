@@ -26,6 +26,8 @@ export class DbRowComponent implements OnInit {
 
   @Output() rowChanged = new EventEmitter<boolean>();
   @Output() rowDeleted = new EventEmitter<any>();
+  
+  @Output() billNumber = new EventEmitter<any>();
 
   unclickable = true;
   constructor(public api: ApiService) { }
@@ -42,6 +44,10 @@ export class DbRowComponent implements OnInit {
       // change the paid value
       row.paid = '1';
     }
+  }
+
+  changeBillNumber(e:any) {
+    this.billNumber.emit(e);
   }
 
 /*   deleteElement(category: string, id: any) {

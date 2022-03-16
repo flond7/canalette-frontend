@@ -1,4 +1,15 @@
+<!-- <form [formGroup]="searchBar" (ngSubmit)="searchElement(searchMessage)">
+  <div class="row">
+    <input [formControl]="searchMessage" type="text" class="form-control searchstring" />
+    <button class="btn btn-secondary button-input" (click)="searchElement(searchMessage)">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </div>
+</form> -->
+
 <div class="row">
   <input [(ngModel)]="searchMessage" (focus)="searchMessage = ''" type="text" class="form-control searchstring" />
-  <button class="btn btn-secondary button-input" (click)="searchElement(searchMessage)"><fa-icon [icon]="faSearch"></fa-icon></button>
+  <button class="btn btn-secondary button-input" (click)="searchElement(searchMessage)">
+    <fa-icon [icon]="faSearch"></fa-icon>
+  </button>
 </div>

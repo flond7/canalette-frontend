@@ -49,6 +49,7 @@ export class BulkYearComponent implements OnInit {
     for (let i = 0; i < elements.length; i++) {
       let a = index[i];
       obj[a] = elements[i];
+      console.log(obj);
     }
     if (this.uploadTab == "year") {
       this.api.createYear(obj).subscribe(
@@ -78,6 +79,7 @@ export class BulkYearComponent implements OnInit {
     this.ngxCsvParser.parse(files[0], { header: this.header, delimiter: ',' })
       .subscribe((result: any) => {
         console.log(result);
+        console.log(result[0]);
         let indexes = result[0][0].split(';')
         result.shift(); //remove first element with headers
         this.uploadLen = result.length;
@@ -88,5 +90,9 @@ export class BulkYearComponent implements OnInit {
         });
       })
   }
-
+/* 
+parse divide il file in singoli array dei record contenenti i dati
+in map elem é l elnco dei dati quindi lo 0 é il nome
+indexes é il nome delle proprietá, key in key value
+*/
 }

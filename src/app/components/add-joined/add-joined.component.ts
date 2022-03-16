@@ -74,7 +74,7 @@ export class AddJoinedComponent implements OnInit {
     this.errorYear = false;
     this.api.findSingleYear(this.year)
       .subscribe(
-        (res) => { console.log(res) },
+        (res) => { console.log("found year") },
         (error) => { this.errorYear = true; })
   }
 
@@ -111,7 +111,8 @@ export class AddJoinedComponent implements OnInit {
         "paid": this.paid,
         "id_drain": this.id_drain,
         "id_user": this.id_user,
-        "id_year": this.year
+        "id_year": this.year,
+        "bill_number": 0
       }
       this.api.createRelational(data).subscribe(res => {
         console.log(res)
@@ -140,13 +141,13 @@ export class AddJoinedComponent implements OnInit {
         parseFloat(year[0]['mailing_money']);
       //save IDs and other data in the object
       obj['amount_computed'] = moneyToPay;
+      obj['amount_paid'] = obj['amount_paid'];
       obj['id_user'] = user[0]['id_user'];
       obj['id_drain'] = drain[0]['id_drain'];
       obj['paid'] = obj['amount_paid'] > 0 ? 1 : 0;
       delete obj.cf;
       delete obj.num;
-      console.log(obj);
-      this.api.createRelational(obj).subscribe(
+       this.api.createRelational(obj).subscribe(
         (res) => {
           this.everythingOk++;
           if (this.everythingOk == this.uploadLen) {

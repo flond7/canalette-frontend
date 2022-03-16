@@ -23,6 +23,7 @@ export class AnagUserComponent implements OnInit {
     "email": "",
     "tel": "",
     "category": "citizen",
+    "tax_type": "ivaFull",
   }
 
   /* REACTIVE FORM */
@@ -33,6 +34,7 @@ export class AnagUserComponent implements OnInit {
     email: new FormControl('', [Validators.email]),
     tel: new FormControl('', []),
     category: new FormControl('', []),
+    tax_type: new FormControl('', []),
   });
   get fu(){return this.userForm.controls;}
 
@@ -50,6 +52,7 @@ export class AnagUserComponent implements OnInit {
       "email": this.data.email,
       "tel": this.data.tel,
       "category": this.data.category,
+      "tax_type": this.data.tax_type,
     };
 
     this.api.createUser(user).subscribe(
@@ -71,6 +74,7 @@ export class AnagUserComponent implements OnInit {
       "email": "",
       "tel": "",
       "category": "citizen",
+      "tax_type": "ivaFull"
     }
     this.userForm.markAsUntouched();
     this.userForm.markAsPristine();
