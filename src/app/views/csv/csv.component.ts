@@ -58,7 +58,7 @@ export class CsvComponent implements OnInit {
 
 
 
-  splitAndFormObject(elem: any, index: any) {
+  /* splitAndFormObject(elem: any, index: any) {
     let elements = elem.split(';');
     let obj: any = {};
     for (let i = 0; i < elements.length; i++) {
@@ -91,6 +91,6 @@ export class CsvComponent implements OnInit {
 
       }
       )
-  }
+  } */
 
 }
