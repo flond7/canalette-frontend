@@ -78,3 +78,5 @@ Add relation (joined table with user, drain and year info)
   
 
 
+## USER INSTRUCTIONS
+- UTENTI: per importare dal DB originale ricordarsi di calcolare da excel la categoria business o citizen (vedi file di esempio con formula giàa pronta)
